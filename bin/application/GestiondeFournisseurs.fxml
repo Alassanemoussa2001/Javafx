@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="550.0" styleClass="stylebackground" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GestiondeFournisseursController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="stylebackground" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar layoutY="-1.0" prefHeight="38.0" prefWidth="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Produits">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleListProduitAction" onMenuValidation="#handleListProduitAction" text="Liste  des produits" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleAjoutP" onMenuValidation="#handleAjoutP" text="Ajout des produits" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Forunisseurs">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleMenuAddAction" onMenuValidation="#handleMenuAddAction" text="Ajout des fournisseurs" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Finance">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleMenuAFi" onMenuValidation="#handleMenuAFi" text="About" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="A propos">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleMenuApropos" onMenuValidation="#handleMenuApropos" text="ISIKA" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <ImageView layoutX="7.0" layoutY="74.0">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="155.0" layoutY="78.0" prefHeight="31.0" prefWidth="289.0" styleClass="styleLabel" text="Listes des Fournisseurs">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblFournisseurs" layoutX="20.0" layoutY="204.0" prefHeight="200.0" prefWidth="458.0">
+              <columns>
+                <TableColumn fx:id="nom" prefWidth="75.0" text="Nom" />
+                <TableColumn fx:id="adresse" prefWidth="146.0" text="Adresse" />
+                  <TableColumn fx:id="telephone" prefWidth="103.0" text="Telephone" />
+                  <TableColumn fx:id="email" prefWidth="133.0" text="Email" />
+              </columns>
+            </TableView>
+            <Label layoutX="178.0" layoutY="469.0" prefHeight="17.0" prefWidth="206.0" styleClass="styleLabel" text="Coyright@ISIKA 2020" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
